@@ -19,7 +19,7 @@ De structuur van mijn site ziet er als vorlgt uit (de structuur kan nog verander
 ### De api en data
 
 ### Features
-- [ ]  
+-[ ]  
 
 <!-- Add a link to your live demo in Github Pages 🌐-->
 
