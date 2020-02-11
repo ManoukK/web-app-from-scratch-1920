@@ -29,7 +29,9 @@ De structuur van mijn site ziet er als vorlgt uit (de structuur kan nog verander
 ### De api en data
 
 ### Features
-- [ ]  Locatie ophalen van de gebruiker en op basis daarvan het weer tonen
+- [ ] Locatie ophalen van de gebruiker en op basis daarvan het weer tonen
+- [ ] Detailpagina tonen zonder overflow hidden
+- [ ] ... aanvullen ...
 
 <!-- Add a link to your live demo in Github Pages 🌐-->
 
