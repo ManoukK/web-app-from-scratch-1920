@@ -1,8 +1,6 @@
 //server opstarten in de terminal met hs
 
 getData();
-// test();
-
 
 function getData(){
     // cors error opgelost door dit ervoor te zetten https://cors-anywhere.herokuapp.com/
@@ -37,7 +35,7 @@ function getData(){
             return results.hourly;
         })
         //Geeft de data van de uren terug (nu hoef je minder diep in de array te zitten)
-        .then(results => {
+        .then(results => { 
             return results.data;
         })
         //Data een beetje opschonen en alles wat ik niet vermeld word eruit gefilterd
@@ -61,19 +59,26 @@ function getData(){
         })
         .then(results => {
             console.log("voor dat het in de fucntion gata", results);
-            setTeperaturNode(results);
+            setNode(results);
+            // setTimeNode(results);
+            // setSummaryNode(results);
         })
 };
 
+
+
 function convertTimestamp(timeStamp){
-    // const covertTimeStamp = new Date(timeStamp - 10800 * 1000);
-    const covertTimeStamp = new Date(timeStamp * 1000);
+    //code regel van Ramon gekregen
+    const timeString = new Date(timeStamp * 1000);
     //https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Global_Objects/Date
     //verschillende type tijden
-    // console.log(covertTimeStamp.toGMTString());
-    // console.log(covertTimeStamp.toLocaleDateString());
-    // console.log(covertTimeStamp.toDateString());
-    return covertTimeStamp.toDateString();
+    const readableTime = timeString.toGMTString();
+    //https://stackoverflow.com/questions/9323182/how-to-remove-the-last-word-in-the-string-using-javascript
+    //laatste woord verwijderen van de timestring
+    const splitReadableTime = readableTime.split(' ');
+    const lastWord = splitReadableTime.pop();
+    const cleanTimeSting = splitReadableTime.join(' ');
+    return cleanTimeSting;
 };
 
 //1580828400
@@ -114,18 +119,66 @@ function convertTimestamp(timeStamp){
 //     // });
 // }
 
-
-//code van Ramon: https://github.com/Ramon96/web-app-from-scratch-1920
-function setTeperaturNode(results){
+//basis code van Ramon: https://github.com/Ramon96/web-app-from-scratch-1920
+// zelf aangepast: 
+function setNode(results){
     const mainElement = document.getElementById('weatherCards');
-    results.forEach(result => {
-        createTemperatureNode(result.time, "p", mainElement);
+    results.forEach((result,index) => {
+        const sectionElement = createNode("section", "oneWeatherCard", result);
+        sectionElement.append(
+            createNode("h2", "id", "time", result.time),
+            createNode("p", "id", "summary", result.summary, "The weather is"),
+            createNode("p", "id", "temperature", result.temperature, "The temperature outside is", "degrees"),
+            createNode("p", "id", "wind", result.wind, "The wind outside is", "km/h"),
+            createNode("a", "href", "#route" + index, "More information >"),
+            );
+        mainElement.append(sectionElement);
     });
 };
 
-function createTemperatureNode(content, elementTagName, parentElement){
+function createNode(elementTagName, atrributeType, atrributeName, content, contentText1="", contentText2=""){
     const element = document.createElement(elementTagName);
-    element.textContent = content + ' graden celsius';
-    parentElement.append(element);
+    element.setAttribute(atrributeType, atrributeName);
+    element.textContent = contentText1 + " " + content + " " + contentText2;
+    return element
 };
 
+//code van Ramon: https://github.com/Ramon96/web-app-from-scratch-1920
+// function setTimeNode(results){
+//     const mainElement = document.getElementById('weatherCards');
+//     results.forEach(result => {
+//         createTimeNode(result.time, "p", mainElement);
+//     });
+// };
+
+// function createTimeNode(content, elementTagName, parentElement){
+//     const element = document.createElement(elementTagName);
+//     element.setAttribute("id", "time")
+//     element.textContent = content;
+//     parentElement.append(element);
+// };
+
+// function setSummaryNode(results){
+//     const mainElement = document.getElementById('oneWeatherCard');
+//     results.forEach(result => {
+//         createSummaryNode(result.summary, "p", mainElement);
+//     });
+// };
+
+// function createSummaryNode(content, elementTagName, parentElement){
+//     const element = document.createElement(elementTagName);
+//     element.setAttribute("id", "summary")
+//     element.textContent = "The weather is " + content;
+//     parentElement.append(element);
+// };
+
+
+routie ({
+    'route0': function() {
+      console.log('root');
+    },
+    'route1': function() {
+      console.log('alert');
+    }
+  });
+  

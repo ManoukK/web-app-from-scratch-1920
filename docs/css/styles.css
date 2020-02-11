@@ -91,25 +91,61 @@ footer {
   font-style: italic;
 } */
 
+/* kleurenpallet die ik heb gebruikt */
+/* https://www.color-hex.com/color-palette/45290 */
 :root {
   --white: #ffffff;
-  --lightGreen: #FDE5B4;
-  --lightPink: #FF9899;
+  --black: #000000;
+  --red: #ff0000;
+  --yellow: #ffff00;
+  --lightBlue: #00ffff;
+  --darkBlue: #0000ff;
+  --purple: #ff00ff;
 }
 
 body {
   margin: 0;
-  height: 100vh;
-  background-image: linear-gradient(#ffffcc, #ffaacc);
-  background-repeat: no-repeat, repeat;
-  background-size: cover;
+  background-color: var(--black);
+  font-family: "Courier New", Courier, monospace;
+  font-style: normal;
 }
 
-h1, p {
-  color: black;
+h1 {
+  color: var(--yellow);
+  text-align: center;
+  font-size: 5em;
+  margin-top: 0.5em;
+}
+
+h2 {
+  color: var(--red);
+  text-align: center;
+}
+
+p {
+  color: var(--lightBlue);
+  background-color: var(--darkBlue);
+  /* display: block; */
+  margin: 1em 0em 1em 0em;
+  padding-left: 1em;
 }
 
 section {
-  border-style: solid;
-  background-color: purple;
+  /* background-color: var(--purple); */
+  margin: 1em 1em 1em 1em;
+}
+
+a {
+  color: var(--darkBlue);
+  background-color: var(--lightBlue);
+  padding-left: 1em;
+}
+
+#weatherCards {
+  display: flex;
+}
+
+#route0 {
+  margin-top: 30em;
+  margin-bottom: 30em;
 }
