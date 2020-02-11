@@ -1,6 +1,17 @@
 # Een weer app voor Amsterdam 
 
-### Opdracht en concept
+### De opdracht 
+
+### Mijn concept
+
+### De structuur
+De structuur van mijn site ziet er als vorlgt uit (de structuur kan nog veranderen naarmate ik verder werk aan dit project)
+
+#### Actor diagram
+![actorDiagram](https://user-images.githubusercontent.com/45541885/74232384-f5d88780-4cc8-11ea-86b1-265d1f24af53.jpg)
+
+#### Interaction diagram
+![interactionDiagram](https://user-images.githubusercontent.com/45541885/74232393-f96c0e80-4cc8-11ea-8e2d-d38c66c2dcdf.jpg)
 
 ### Installatie
 
