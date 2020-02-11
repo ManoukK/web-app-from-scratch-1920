@@ -4,6 +4,12 @@
 De opdracht is om een api in te laden en content in html te zetten van die api. De website/code moet dynamisch zijn. 
 
 ### Mijn concept
+Mijn concept is om van de komende 3 uur het weer te laten zien van je huidige situatie. Standaard staat het op Amsterdam. Op de hoofdpagina zie je eerst algemene informatie over het weer en je kan door klikken om meer informatie te lezen over het uur. 
+
+Ik wil het in teletext stijl vormgeven want dat vind ik een hele leuke stijl. 
+
+#### De hoofdpagina (tot nu toe)
+![Schermafbeelding 2020-02-11 om 16 04 44](https://user-images.githubusercontent.com/45541885/74248719-4ca18980-4ce8-11ea-8225-27284c8dd25e.png)
 
 ### De structuur
 De structuur van mijn site ziet er als vorlgt uit (de structuur kan nog veranderen naarmate ik verder werk aan dit project)
