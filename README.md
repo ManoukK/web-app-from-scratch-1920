@@ -1,6 +1,7 @@
 # Een weer app voor Amsterdam 
 
 ### De opdracht 
+De opdracht is om een api in te laden en content in html te zetten van die api. De website/code moet dynamisch zijn. 
 
 ### Mijn concept
 
@@ -17,7 +18,8 @@ De structuur van mijn site ziet er als vorlgt uit (de structuur kan nog verander
 
 ### De api en data
 
-
+### Features
+- [ ]  
 
 <!-- Add a link to your live demo in Github Pages 🌐-->
 
