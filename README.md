@@ -4,7 +4,7 @@
 De opdracht is om een api in te laden en content in html te zetten van die api. De website/code moet dynamisch zijn. 
 
 ### Mijn concept
-Mijn concept is om van de komende 3 uur het weer te laten zien van je huidige situatie. Standaard staat het op Amsterdam. Op de hoofdpagina zie je eerst algemene informatie over het weer en je kan door klikken om meer informatie te lezen over het uur. 
+Mijn concept is om van de komende 3 uur het weer te laten zien van je huidige situatie. Standaard staat het op Amsterdam. Op de hoofdpagina zie je eerst algemene informatie over het weer en je kan door klikken om meer informatie te lezen over het uur. De data word geladen met de api, hier kan je meer over lezen onder het kopje: De api en data.
 
 Ik wil het in teletext stijl vormgeven want dat vind ik een hele leuke stijl. 
 
