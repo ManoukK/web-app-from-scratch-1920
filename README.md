@@ -1,7 +1,7 @@
 # Een weer app voor Amsterdam 
 
 ### De opdracht 
-- De opdracht is om een api in te laden en content in html te zetten van die api. 
+- Data ophalen uit een api en die data in html tonen.
 - De website/code moet dynamisch zijn.
 - We moeten gebruik maken van modules.
 - Met een mirco libary word er getoggled tussen de hoofdpagina en de detailpagina.
