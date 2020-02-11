@@ -2,6 +2,8 @@
 
 getData();
 
+
+//module api
 function getData(){
     // cors error opgelost door dit ervoor te zetten https://cors-anywhere.herokuapp.com/
     //bron van Maikel Sleebos 
@@ -47,7 +49,9 @@ function getData(){
                     summary: results.summary,
                     weatherType: results.precipType,
                     temperature: results.temperature,
+                    temperatureFeeling: results.apparentTemperature,
                     wind: results.windSpeed,
+                    windGust: results.windGust,
                     airpressure: results.pressure,
                     visibility: results.visibility, 
                     icon: results.icon,
@@ -60,12 +64,9 @@ function getData(){
         .then(results => {
             console.log("voor dat het in de fucntion gata", results);
             setNode(results);
-            // setTimeNode(results);
-            // setSummaryNode(results);
+            setDetailNode(results);
         })
 };
-
-
 
 function convertTimestamp(timeStamp){
     //code regel van Ramon gekregen
@@ -81,52 +82,15 @@ function convertTimestamp(timeStamp){
     return cleanTimeSting;
 };
 
-//1580828400
-
-// function makeHtmlElements(results) {
-//     console.log("hoi", results);
-//     // // document.getElementsByTagName("h1")[0].innerHTML = results[0].summary + " " + results[0].weatherType;
-//     // document.getElementById("summary").textContent = results.summary;
-//     // document.getElementById("temperature").textContent = results.temperature;
-    
-//     // //https://stackoverflow.com/questions/5886144/create-divs-from-array-elements
-//     // const fruitsList = document.getElementById('weatherCard');
-//     // const p = document.createElement('p');
-
-//     // results.forEach(function (result, index) {
-//     //     const clone = p.cloneNode();
-//     //     clone.textContent = index + ': ' + result.summary;
-//     //     fruitsList.appendChild(clone);
-//     // });
-
-//     // const sectionList = document.getElementById('weatherCards');
-//     // const section = document.createElement('section');
-
-//     // results.forEach(function (result, index) {
-//     //     const sectionList = document.getElementById('weatherCards');
-//     //     const section = document.createElement('section');
-//     //     const clone = section.cloneNode(true);
-//     //     // clone.textContent = result.summary + ' ' + result.weatherType + ' ' + result.temperature;
-//     //     sectionList.appendChild(clone);
-//     // });
-
-//     // results.forEach(function (result, index) {
-//     //     const sectionList = document.getElementsByTagName('section');
-//     //     const p = document.createElement('p');
-//     //     const clone = p.cloneNode(true);
-//     //     clone.textContent = result.summary;
-//     //     sectionList.appendChild(clone);
-//     // });
-// }
-
+//module render
 //basis code van Ramon: https://github.com/Ramon96/web-app-from-scratch-1920
 // zelf aangepast: 
 function setNode(results){
     const mainElement = document.getElementById('weatherCards');
     results.forEach((result,index) => {
-        const sectionElement = createNode("section", "oneWeatherCard", result);
+        const sectionElement = createNode("article", "oneWeatherCard", result);
         sectionElement.append(
-            createNode("h2", "id", "time", result.time),
+            createNode("h2", "id", "title", result.time),
             createNode("p", "id", "summary", result.summary, "The weather is"),
             createNode("p", "id", "temperature", result.temperature, "The temperature outside is", "degrees"),
             createNode("p", "id", "wind", result.wind, "The wind outside is", "km/h"),
@@ -143,36 +107,35 @@ function createNode(elementTagName, atrributeType, atrributeName, content, conte
     return element
 };
 
-//code van Ramon: https://github.com/Ramon96/web-app-from-scratch-1920
-// function setTimeNode(results){
-//     const mainElement = document.getElementById('weatherCards');
-//     results.forEach(result => {
-//         createTimeNode(result.time, "p", mainElement);
-//     });
-// };
+//module renderDetail
+function setDetailNode(results, index){
+    const mainElement = document.getElementById('detailWeatherCards');
+    results.forEach((result, index) => {
+        const sectionElement = createDetailNode("article", "oneDetailWeatherCard", result);
+        sectionElement.append(
+            createDetailNode("h2", "id", "route" + index, result.time),
+            createDetailNode("p", "id", "summary", result.summary, "The weather is"),
+            createDetailNode("p", "id", "type", result.weatherType, "The weather type is"),
+            createDetailNode("p", "id", "temperature", result.temperature, "The temperature outside is", "degrees"),
+            createDetailNode("p", "id", "temperatureFeeling", result.temperatureFeeling, "It feels like", "degrees outside"),
+            createDetailNode("p", "id", "wind", result.wind, "The wind outside is", "km/h"),
+            createDetailNode("p", "id", "windGust", result.windGust, "The gusts of wind outside are", "km/h"),
+            createDetailNode("p", "id", "visibility", result.visibility, "You can see", "km in the distance"),
+            createDetailNode("p", "id", "airpressure", result.airpressure, "The air pressure is", "hPa"),
+            createDetailNode("a", "href", "#top", "back to top >"),
+            );
+        mainElement.append(sectionElement);
+    });
+};
 
-// function createTimeNode(content, elementTagName, parentElement){
-//     const element = document.createElement(elementTagName);
-//     element.setAttribute("id", "time")
-//     element.textContent = content;
-//     parentElement.append(element);
-// };
+function createDetailNode(elementTagName, atrributeType, atrributeName, content, contentText1="", contentText2=""){
+    const element = document.createElement(elementTagName);
+    element.setAttribute(atrributeType, atrributeName);
+    element.textContent = contentText1 + " " + content + " " + contentText2;
+    return element;
+};
 
-// function setSummaryNode(results){
-//     const mainElement = document.getElementById('oneWeatherCard');
-//     results.forEach(result => {
-//         createSummaryNode(result.summary, "p", mainElement);
-//     });
-// };
-
-// function createSummaryNode(content, elementTagName, parentElement){
-//     const element = document.createElement(elementTagName);
-//     element.setAttribute("id", "summary")
-//     element.textContent = "The weather is " + content;
-//     parentElement.append(element);
-// };
-
-
+//module router
 routie ({
     'route0': function() {
       console.log('root');
