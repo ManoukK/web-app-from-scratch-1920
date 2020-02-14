@@ -1,8 +1,19 @@
 # Een weer app voor Amsterdam 
 
 ### De opdracht 
+- Data ophalen uit een api en die data in html tonen.
+- De website/code moet dynamisch zijn.
+- We moeten gebruik maken van modules.
+- Met een mirco libary word er getoggled tussen de hoofdpagina en de detailpagina.
+- De code visualiseren met een actor en interaction diagram.
 
 ### Mijn concept
+Mijn concept is om van de komende 3 uur het weer te laten zien van je huidige situatie. Standaard staat het op Amsterdam. Op de hoofdpagina zie je eerst algemene informatie over het weer en je kan door klikken om meer informatie te lezen over het uur. De data word geladen met de api, hier kan je meer over lezen onder het kopje: De api en data.
+
+Ik wil het in teletext stijl vormgeven want dat vind ik een hele leuke stijl. 
+
+#### De hoofdpagina (tot nu toe)
+![Schermafbeelding 2020-02-11 om 16 04 44](https://user-images.githubusercontent.com/45541885/74248719-4ca18980-4ce8-11ea-8225-27284c8dd25e.png)
 
 ### De structuur
 De structuur van mijn site ziet er als vorlgt uit (de structuur kan nog veranderen naarmate ik verder werk aan dit project)
@@ -17,7 +28,10 @@ De structuur van mijn site ziet er als vorlgt uit (de structuur kan nog verander
 
 ### De api en data
 
-
+### Features
+- [ ] Locatie ophalen van de gebruiker en op basis daarvan het weer tonen
+- [ ] Detailpagina tonen zonder overflow hidden
+- [ ] ... aanvullen ...
 
 <!-- Add a link to your live demo in Github Pages 🌐-->
 
