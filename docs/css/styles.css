@@ -11,18 +11,24 @@
 }
 
 body {
-  overflow: hidden;
+  /* overflow: hidden; */
   margin: 0;
   background-color: var(--black);
   font-family: "Courier New", Courier, monospace;
   font-style: normal;
 }
 
+header {
+  /* margin: 0em; */
+  /* height: 15em;
+  margin-top: -4em; */
+}
+
 h1 {
   color: var(--yellow);
   text-align: center;
-  font-size: 5em;
-  padding-top: 0.5em;
+  font-size: 3em;
+  padding-top: 1em;
 }
 
 h2 {
@@ -36,10 +42,11 @@ p {
   /* display: block; */
   margin: 1em 0em 1em 0em;
   padding-left: 1em;
+  padding-right: 1em;
 }
 
 #weatherCards > article {
-  margin: 1em 1em 20em 1em;
+  margin: 1em 1em 1em 2em;
 }
 
 a {
@@ -53,12 +60,6 @@ a {
 }
 
 #detailWeatherCards > article {
-  height: 50em;
-  width: 40em;
-  margin: auto;
-}
-
-
-#detailWeatherCards > article > h2 {
-  padding-top: 4em;
+  position: absolute;
+  width: 90%;
 }

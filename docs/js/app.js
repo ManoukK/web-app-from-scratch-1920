@@ -8,12 +8,14 @@ function getData(){
     // cors error opgelost door dit ervoor te zetten https://cors-anywhere.herokuapp.com/
     //bron van Maikel Sleebos 
     const cors = 'https://cors-anywhere.herokuapp.com/';
-    const url = 'https://api.darksky.net/forecast/';
+    const api = 'https://api.darksky.net/forecast/';
     const key = '4607992d79c7de3829e5f5b67a062c8e';
     //lat, long staat op Amsterdam
     const lat = '52.379189';
     const long = '4.899431';
     const units = '?units=si';
+    const url = `${cors}${api}${key}/${lat},${long}${units}`; 
+    console.log(url);
     // console.log(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${key}/${lat},${long}?units=si`)
     
     //lat en long mee kunnen geven aan deze url. Misschien heeft google maps dat wel?
@@ -21,7 +23,7 @@ function getData(){
 
     // const jsonInHtml = document.querySelector('.test');
 
-    fetch (`${cors}${url}${key}/${lat},${long}${units}`)
+    fetch (url)
         //data word json
         .then(response => {
             return response.json();
@@ -92,7 +94,7 @@ function setNode(results){
         sectionElement.append(
             createNode("h2", "id", "title", result.time),
             createNode("p", "id", "summary", result.summary, "The weather is"),
-            createNode("p", "id", "temperature", result.temperature, "The temperature outside is", "degrees"),
+            createNode("p", "id", "temperature", result.temperature, "It is", "degrees outside"),
             createNode("p", "id", "wind", result.wind, "The wind outside is", "km/h"),
             createNode("a", "href", "#route" + index, "More information >"),
             );
@@ -106,6 +108,7 @@ function createNode(elementTagName, atrributeType, atrributeName, content, conte
     element.textContent = contentText1 + " " + content + " " + contentText2;
     return element
 };
+
 
 //module renderDetail
 function setDetailNode(results, index){
@@ -134,6 +137,7 @@ function createDetailNode(elementTagName, atrributeType, atrributeName, content,
     element.textContent = contentText1 + " " + content + " " + contentText2;
     return element;
 };
+
 
 //module router
 routie ({
