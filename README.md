@@ -25,6 +25,13 @@ De structuur van mijn site ziet er als vorlgt uit (de structuur kan nog verander
 ![interactionDiagram](https://user-images.githubusercontent.com/45541885/74232393-f96c0e80-4cc8-11ea-8e2d-d38c66c2dcdf.jpg)
 
 ### Installatie
+Om Dit project zelf ook te kunnen gebruiken kan je mijn repository forken rechts boven. Daar kan je het ook eventueel downloaden. Verder heb je de api, darksky, nodig. Hieronder leg ik uit hoe je daar gebruik van kan maken. Zorg er wel voor dat je jouw eigen key gebruikt. 
+
+Verder maar ik ook gebruik van cors. Dit is een api die een omleiding maakt naar de api, darksky. Voor mij is dit nodig omdat ik anders een cors error krijg en ik de api niet kan gebruiken. Kijk ook of je dit nodig heb. Zo ja dan kan je gewoon deze link voor jouw api link plaatsen. 
+
+Cors link die ik heb gebruikt: https://cors-anywhere.herokuapp.com/
+
+Zo komt de api link er nu uit te zien: https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${key}/${lat},${long} 
 
 ### De api en data
 De api die ik heb gebruikt is darksky: https://darksky.net/dev Deze api haald het weer op van een locatie naar keuze. In de api zit: 
