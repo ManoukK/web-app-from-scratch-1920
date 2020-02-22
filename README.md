@@ -111,12 +111,13 @@ Dat gebeurd alsvolgd met deze fucntion.
 1. Een nieuwe date aanmaken door de timestamp keer 1000 te doen. Uitkomst: Sat Feb 22 2020 15:00:00 GMT+0100 (Midden-Europese standaardtijd)
 2. De string omzetten naar een andere vorm string/tijd. Uitkomst: Sat, 22 Feb 2020 14:00:00 GMT
 3. Alle woorden splitsen zodat ik de GMT weg kan halen. Uitkomst: ["Mon,", "24", "Feb", "2020", "05:00:00"]
+4. Het laatste woord (GMT) scheiden van de rest. Uitkomst: GMT
+5. Alle woorden weer samenvoegen tot een zin/string. Uitkomst: Sat, 22 Feb 2020 14:00:00
 
 ```js
 function convertTimestamp(timeStamp){
     const timeString = new Date(timeStamp * 1000);
     const readableTime = timeString.toGMTString();
-    
     const splitReadableTime = readableTime.split(' ');
     const lastWord = splitReadableTime.pop();
     const cleanTimeSting = splitReadableTime.join(' ');
