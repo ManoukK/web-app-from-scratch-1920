@@ -18,11 +18,11 @@ body {
   font-style: normal;
 }
 
-header {
-  /* margin: 0em; */
-  /* height: 15em;
-  margin-top: -4em; */
-}
+/* header {
+  margin: 0em;
+  height: 15em;
+  margin-top: -4em;
+} */
 
 h1 {
   color: var(--yellow);
@@ -57,9 +57,20 @@ a {
 
 #weatherCards {
   display: flex;
+  position: absolute;
 }
 
 #detailWeatherCards > article {
   position: absolute;
   width: 90%;
+  margin: 0em 0em 0em 2em;
 }
+
+article {
+  display: none;
+}
+
+article.active {
+  display: initial;
+  /* visibility: visible; */
+} 

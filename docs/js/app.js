@@ -44,7 +44,7 @@ function getData(){
         })
         //Data een beetje opschonen en alles wat ik niet vermeld word eruit gefilterd
         .then(results => {
-            console.log("uren en de data daarvan", results)
+            // console.log("uren en de data daarvan", results)
             return results.map(results => {
                 return {
                     time: convertTimestamp(results.time),
@@ -61,6 +61,7 @@ function getData(){
             })
         })
         .then(results => {
+            console.log("uren en de data daarvan", results)
             return results.splice(1, 3);
         })
         .then(results => {
@@ -90,7 +91,7 @@ function convertTimestamp(timeStamp){
 function setNode(results){
     const mainElement = document.getElementById('weatherCards');
     results.forEach((result,index) => {
-        const sectionElement = createNode("article", "oneWeatherCard", result);
+        const sectionElement = createNode("article", "class", "active", result);
         sectionElement.append(
             createNode("h2", "id", "title", result.time),
             createNode("p", "id", "summary", result.summary, "The weather is"),
@@ -114,9 +115,9 @@ function createNode(elementTagName, atrributeType, atrributeName, content, conte
 function setDetailNode(results, index){
     const mainElement = document.getElementById('detailWeatherCards');
     results.forEach((result, index) => {
-        const sectionElement = createDetailNode("article", "oneDetailWeatherCard", result);
+        const sectionElement = createDetailNode("article", "data-route", "route" + index, result);
         sectionElement.append(
-            createDetailNode("h2", "id", "route" + index, result.time),
+            createDetailNode("h2", "id", "time", result.time),
             createDetailNode("p", "id", "summary", result.summary, "The weather is"),
             createDetailNode("p", "id", "type", result.weatherType, "The weather type is"),
             createDetailNode("p", "id", "temperature", result.temperature, "The temperature outside is", "degrees"),
@@ -142,10 +143,33 @@ function createDetailNode(elementTagName, atrributeType, atrributeName, content,
 //module router
 routie ({
     'route0': function() {
-      console.log('root');
+        classToggle('route0');
+        console.log('Je hebt op card 1 geklikt!');
     },
     'route1': function() {
-      console.log('alert');
+        classToggle('route1');
+        console.log('Je hebt op card 2 geklikt!');
+    },
+    'route2': function() {
+        classToggle('route2');
+        console.log('Je hebt op card 3 geklikt!');
     }
   });
   
+
+function classToggle(route) {
+    //pakt alle html articles
+    const articles = document.querySelectorAll('article');
+
+    //foreach loop en removed alle classes "active"
+    articles.forEach(article => {
+        article.classList.remove('active');
+    });
+
+    //pakt de active article en kijkt daarnaar naar de routie 
+    activeArticle = document.querySelector(`[data-route=${route}]`);
+    //hier word de hele article met alles erin in de colsole gezet
+    console.log(activeArticle);
+    //hier word de class active toegevoegd aan de article die aan geklikt is
+    activeArticle.classList.add('active');
+};
