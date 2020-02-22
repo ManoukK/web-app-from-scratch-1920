@@ -27,6 +27,30 @@ De structuur van mijn site ziet er als vorlgt uit (de structuur kan nog verander
 ### Installatie
 
 ### De api en data
+De api die ik heb gebruikt is darksky: https://darksky.net/dev Deze api haald het weer op van een locatie naar keuze. In de api zit: 
+- Het huidige weer.
+- het weer voor het hele uur, minuut voor minuut. 
+- Het weer per uur voor de hele dag. 
+- Het weer van elke dag voor de hele week.
+- Weer alerts. 
+
+Verder bevat het ook veel meer informatie dan alleen het temperatuur. En verschilt het per onderwerp welke informatie beschikbaar is. In deze documentatie kan je alles lezen over wat de api bevat https://darksky.net/dev/docs
+
+#### De url voor de api 
+De url die je moet gebruiken om de api aan de praat te krijgen ziet er zo uit: 
+```
+ https://api.darksky.net/forecast/[key]/[latitude],[longitude]
+```
+De key kan je opvragen op de hun site. Je kan het gratis gebruiken alleen er zit wel een limiet van 1000 calls per dag. Als je jouw key hebt gekregen zet je die in de key in de url. Vervolgens kan je zelf ook een lat en long opzoeken en deze in de url plaatsen. Standaard staat er een locatie uit Amerika. 
+
+#### Van Amikaanse waardes naar Europese waardes
+Standaard staan alle waardes in het Amerikaans. Om dit om te zetten naar meters en graden celsius moet je dit kleine stukje achter jouw api link plaatsen en nu komt dus de link er zo uit te zien: 
+```
+?units=si
+
+https://api.darksky.net/forecast/${key}/${lat},${long}?units=si
+```
+
 
 ### Features
 - [ ] Locatie ophalen van de gebruiker en op basis daarvan het weer tonen
