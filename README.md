@@ -50,7 +50,79 @@ Standaard staan alle waardes in het Amerikaans. Om dit om te zetten naar meters 
 
 https://api.darksky.net/forecast/${key}/${lat},${long}?units=si
 ```
+#### Data die de api ophaald 
+Dit is de ruwe data die je krijgt van de api. Je kan tot in de detail alle informatie zien voor elke minuut, uur of dag alleen dat laat ik nu niet zien.
 
+![Schermafbeelding 2020-02-22 om 14 51 52](https://user-images.githubusercontent.com/45541885/75093557-facbef80-5582-11ea-99a5-8c62fec0920d.png)
+
+Wil je toch alle informatie bekijken in de api? Ga dan naar mijn website: https://manoukk.github.io/web-app-from-scratch-1920/ ga naar inspect via je rechtermuis knop en ga dan naar console. Daar kan je onder het kopje "gehele dataset" alles bekijken.
+
+#### Data die ik gebruik
+Ik wilde het weer gebruiken van de komende 3 uur. Als eerste heb ik alles gefilterd behalve de uren en heb ik dit verder opgeschoond. Om bij de "echte" uren te komen moest ik ook nog een .then maken die de data eruit pakte. Zoals je in de screenshot kan zien zitten alle uren in data.
+
+```js
+   .then(results => {
+            console.log("uren", results.hourly);
+            return results.hourly;
+        })
+   .then(results => { 
+            return results.data;
+        })
+```
+Nu krijg ik dit als resultaat: 
+
+![Schermafbeelding 2020-02-22 om 14 58 14](https://user-images.githubusercontent.com/45541885/75093624-cc9adf80-5583-11ea-9b23-12a1ed6412f5.png)
+
+Vervolgens heb ik binnen het uur ook de data opgeschoond. Ik wilde namelijk niet alles gebruiken van de dataset. Ook de namen van heb ik af en toe vervangen voor namen die mij logisch leken. Nu heb ik de data waar ik mee wil werken. 
+
+```js
+     .then(results => {
+            console.log("uren en de data daarvan", results)
+            return results.map(results => {
+                return {
+                    time: convertTimestamp(results.time),
+                    summary: results.summary,
+                    weatherType: results.precipType,
+                    temperature: results.temperature,
+                    temperatureFeeling: results.apparentTemperature,
+                    wind: results.windSpeed,
+                    windGust: results.windGust,
+                    airpressure: results.pressure,
+                    visibility: results.visibility, 
+                    icon: results.icon,
+                }
+            })
+        })
+```
+![Schermafbeelding 2020-02-22 om 15 08 13](https://user-images.githubusercontent.com/45541885/75093788-2ea81480-5585-11ea-8e71-5fefda994266.png)
+
+Vervolgens wil ik alleen de eerste 3 items van de array gebruiken want dat zijn altijd de aankomende 3 uur. Dit heb ik gedaan door splice te gebruiken. Nu word de array gesplits en return ik alleen nog maar de eerste 3 items.
+
+```js
+ .then(results => {
+            return results.splice(1, 3);
+        })
+```
+
+#### Timestamps omzetten naar leesbare tijd
+Zoals je misschien al eerder kon zien in de code convert ik de timestamp naar leesbare tijd. Deze code heb ik van Ramon. 
+Dat gebeurd alsvolgd met deze fucntion. 
+
+1. Een nieuwe date aanmaken door de timestamp keer 1000 te doen. Uitkomst: Sat Feb 22 2020 15:00:00 GMT+0100 (Midden-Europese standaardtijd)
+2. De string omzetten naar een andere vorm string/tijd. Uitkomst: Sat, 22 Feb 2020 14:00:00 GMT
+3. Alle woorden splitsen zodat ik de GMT weg kan halen. Uitkomst: ["Mon,", "24", "Feb", "2020", "05:00:00"]
+
+```js
+function convertTimestamp(timeStamp){
+    const timeString = new Date(timeStamp * 1000);
+    const readableTime = timeString.toGMTString();
+    
+    const splitReadableTime = readableTime.split(' ');
+    const lastWord = splitReadableTime.pop();
+    const cleanTimeSting = splitReadableTime.join(' ');
+    return cleanTimeSting;
+};
+```
 
 ### Features
 - [ ] Locatie ophalen van de gebruiker en op basis daarvan het weer tonen
