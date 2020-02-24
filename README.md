@@ -1,7 +1,7 @@
 # Een weer app voor Amsterdam 
 
 ### Inhoudsopgave
-* [De opdracht](#De opdracht)
+- [De opdracht](###De-opdracht)
 
 ### De opdracht 
 - Data ophalen uit een api en die data in html tonen.
