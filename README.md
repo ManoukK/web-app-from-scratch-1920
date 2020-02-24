@@ -3,9 +3,18 @@
 ### Inhoudsopgave
 * [De opdracht](#De-opdracht)
 * [Mijn concept](#Mijn-concept)
-   * [De hoofdpagina](#De-api-en-data)
+   * [De hoofdpagina](#De-hoofdpagina-(tot-nu-toe))
+* [De structuur](#De-structuur)
+   * [Actor diagram](#Actor-diagram)
+   * [Interaction diagram](#Interaction-diagram)
+* [Installatie](#Installatie)
 * [De api en data](#De-api-en-data)
-
+   * [De url voor de api](#De-url-voor-de-api)
+   * [Van Amerikaanse waardes naar Europese waardes](#Van-Amerikaanse-waardes-naar-Europese-waardes)
+   * [Data die de api ophaald](#Data-die-de-api-ophaald)
+   * [Data die de api ophaald](#Data-die-ik-gebruik)
+   
+   
 ### De opdracht 
 - Data ophalen uit een api en die data in html tonen.
 - De website/code moet dynamisch zijn.
@@ -56,7 +65,7 @@ De url die je moet gebruiken om de api aan de praat te krijgen ziet er zo uit:
 ```
 De key kan je opvragen op de hun site. Je kan het gratis gebruiken alleen er zit wel een limiet van 1000 calls per dag. Als je jouw key hebt gekregen zet je die in de key in de url. Vervolgens kan je zelf ook een lat en long opzoeken en deze in de url plaatsen. Standaard staat er een locatie uit Amerika. 
 
-#### Van Amikaanse waardes naar Europese waardes
+#### Van Amerikaanse waardes naar Europese waardes
 Standaard staan alle waardes in het Amerikaans. Om dit om te zetten naar meters en graden celsius moet je dit kleine stukje achter jouw api link plaatsen en nu komt dus de link er zo uit te zien: 
 ```
 ?units=si
