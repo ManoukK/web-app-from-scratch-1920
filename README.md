@@ -12,9 +12,10 @@
    * [De url voor de api](#De-url-voor-de-api)
    * [Van Amerikaanse waardes naar Europese waardes](#Van-Amerikaanse-waardes-naar-Europese-waardes)
    * [Data die de api ophaald](#Data-die-de-api-ophaald)
-   * [Data die de api ophaald](#Data-die-ik-gebruik)
-   
-   
+   * [Data die ik gebruik](#Data-die-ik-gebruik)
+   * [Timestamps omzetten naar leesbare tijd](#Timestamps-omzetten-naar-leesbare-tijd)
+* [Features](#Features) 
+
 ### De opdracht 
 - Data ophalen uit een api en die data in html tonen.
 - De website/code moet dynamisch zijn.
@@ -149,18 +150,19 @@ function convertTimestamp(timeStamp){
 
 ### Features
 - [ ] Locatie ophalen van de gebruiker en op basis daarvan het weer tonen
-- [ ] Detailpagina tonen zonder overflow hidden
-- [ ] ... aanvullen ...
+- [x] Detailpagina tonen zonder overflow hidden
+- [ ] gebruik maken van een template om data te tonen op de site
 
-<!-- Add a link to your live demo in Github Pages 🌐-->
 
-<!-- ☝️ replace this description with a description of your own work -->
+<!-- DONE! Add a link to your live demo in Github Pages 🌐-->
 
-<!-- replace the code in the /docs folder with your own, so you can showcase your work with GitHub Pages 🌍 -->
+<!-- DONE ☝️ replace this description with a description of your own work -->
+
+<!-- DONE replace the code in the /docs folder with your own, so you can showcase your work with GitHub Pages 🌍 -->
 
 <!-- Add a nice poster image here at the end of the week, showing off your shiny frontend 📸 -->
 
-<!-- Maybe a table of contents here? 📚 -->
+<!-- DONE Maybe a table of contents here? 📚 -->
 
 <!-- How about a section that describes how to install this project? 🤓 -->
 
