@@ -158,14 +158,14 @@ function convertTimestamp(timeStamp){
 - [ ] URL api gebruiken om een nog nettere url te maken
 
 ### Bronnenlijst
-- Api: 
-- Routie: 
-- CORS error oplossing: 
-- Time converter:
-- Time converter met een mooie string:
-- Time converter string zonder GMT: 
-- Class toggle voor Routie: (van joost)
-- Data in de html krijgen: 
+- Api: https://darksky.net/dev
+- Routie: https://github.com/cmda-minor-web/web-app-from-scratch-1920/tree/master/examples/routing-fetching-templating
+- CORS error oplossing: Maikel Sleebos deelde het in Slack, https://cors-anywhere.herokuapp.com/
+- Time converter: Ramon Meijers deelde het met mij in de les
+- Time converter met een mooie string: https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Global_Objects/Date
+- Time converter string zonder GMT: https://stackoverflow.com/questions/9323182/how-to-remove-the-last-word-in-the-string-using-javascript
+- Class toggle voor Routie: https://github.com/cmda-minor-web/web-app-from-scratch-1920/tree/master/examples/routing-fetching-templating
+- Data in de html krijgen: Ramon Meijers hielp mij hiermee in de les
 
 ### Credits
 - Ramon Meijers, hij hielp me met data laden in html en heeft me geholpen met timestamps omzetten naar leesbare tijd. 
