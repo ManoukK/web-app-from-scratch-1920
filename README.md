@@ -8,6 +8,7 @@
    * [Actor diagram](#Actor-diagram)
    * [Interaction diagram](#Interaction-diagram)
 * [Installatie](#Installatie)
+   * [Routie](#Routie)
 * [De api en data](#De-api-en-data)
    * [De url voor de api](#De-url-voor-de-api)
    * [Van Amerikaanse waardes naar Europese waardes](#Van-Amerikaanse-waardes-naar-Europese-waardes)
@@ -50,6 +51,14 @@ Verder maar ik ook gebruik van cors. Dit is een api die een omleiding maakt naar
 Cors link die ik heb gebruikt: https://cors-anywhere.herokuapp.com/
 
 Zo komt de api link er nu uit te zien: https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${key}/${lat},${long} 
+
+#### Routie 
+Voor de navigatie maak ik gebruik van Routie. Als je dat ook wilt gebruiken zet je de script boven aan in de body van je html 
+```html
+<script src="libary/routie.js"></script>
+```
+
+Op deze manier kan er nu getoggled worden tussen hoofd en detail pagina's. De javascript code hiervoor kan je vinden in de module onder route.
 
 ### De api en data
 De api die ik heb gebruikt is darksky: https://darksky.net/dev Deze api haald het weer op van een locatie naar keuze. In de api zit: 
