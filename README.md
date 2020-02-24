@@ -2,7 +2,9 @@
 
 ### Inhoudsopgave
 * [De opdracht](#De-opdracht)
-* [De opdracht](#De-api-en-data)
+* [Mijn concept](#Mijn-concept)
+ * [De hoofdpagina](#De-api-en-data)
+* [De api en data](#De-api-en-data)
 
 ### De opdracht 
 - Data ophalen uit een api en die data in html tonen.
