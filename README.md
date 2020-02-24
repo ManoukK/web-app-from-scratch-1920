@@ -14,7 +14,9 @@
    * [Data die de api ophaald](#Data-die-de-api-ophaald)
    * [Data die ik gebruik](#Data-die-ik-gebruik)
    * [Timestamps omzetten naar leesbare tijd](#Timestamps-omzetten-naar-leesbare-tijd)
-* [Features](#Features) 
+* [Features](#Features)
+* [Bronnenlijst](#Bronnenlijst)
+* [Credits](#Credits)
 
 ### De opdracht 
 - Data ophalen uit een api en die data in html tonen.
@@ -152,6 +154,25 @@ function convertTimestamp(timeStamp){
 - [ ] Locatie ophalen van de gebruiker en op basis daarvan het weer tonen
 - [x] Detailpagina tonen zonder overflow hidden
 - [ ] gebruik maken van een template om data te tonen op de site
+- [ ] Hele getallen tonen
+- [ ] URL api gebruiken om een nog nettere url te maken
+
+### Bronnenlijst
+- Api: 
+- Routie: 
+- CORS error oplossing: 
+- Time converter:
+- Time converter met een mooie string:
+- Time converter string zonder GMT: 
+- Class toggle voor Routie: (van joost)
+- Data in de html krijgen: 
+
+### Credits
+- Ramon Meijers, hij hielp me met data laden in html en heeft me geholpen met timestamps omzetten naar leesbare tijd. 
+- Maikel Sleebos, dankzij hem heb ik de cors error niet meer. 
+- Joost Faber, hij heeft mij geholpen met de promise die vervelend ging doen zodra ik alles in modules ging plaatsen. 
+- Robin Stut, hij heeft me geholpen met een filter functie waarbij ik de eerste 3 items uit de array terug krijg. 
+
 
 
 <!-- DONE! Add a link to your live demo in Github Pages 🌐-->
@@ -164,11 +185,11 @@ function convertTimestamp(timeStamp){
 
 <!-- DONE Maybe a table of contents here? 📚 -->
 
-<!-- How about a section that describes how to install this project? 🤓 -->
+<!-- DONE How about a section that describes how to install this project? 🤓 -->
 
-<!-- ...but how does one use this project? What are its features 🤔 -->
+<!-- DONE ...but how does one use this project? What are its features 🤔 -->
 
-<!-- What external data source is featured in your project and what are its properties 🌠 -->
+<!-- DONE What external data source is featured in your project and what are its properties 🌠 -->
 
 <!-- Maybe a checklist of done stuff and stuff still on your wishlist? ✅ -->
 
