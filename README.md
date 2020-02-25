@@ -1,5 +1,24 @@
 # Een weer app voor Amsterdam 
 
+### Inhoudsopgave
+* [De opdracht](#De-opdracht)
+* [Mijn concept](#Mijn-concept)
+   * [De hoofdpagina](#De-hoofdpagina-(tot-nu-toe))
+* [De structuur](#De-structuur)
+   * [Actor diagram](#Actor-diagram)
+   * [Interaction diagram](#Interaction-diagram)
+* [Installatie](#Installatie)
+   * [Routie](#Routie)
+* [De api en data](#De-api-en-data)
+   * [De url voor de api](#De-url-voor-de-api)
+   * [Van Amerikaanse waardes naar Europese waardes](#Van-Amerikaanse-waardes-naar-Europese-waardes)
+   * [Data die de api ophaald](#Data-die-de-api-ophaald)
+   * [Data die ik gebruik](#Data-die-ik-gebruik)
+   * [Timestamps omzetten naar leesbare tijd](#Timestamps-omzetten-naar-leesbare-tijd)
+* [Features](#Features)
+* [Bronnenlijst](#Bronnenlijst)
+* [Credits](#Credits)
+
 ### De opdracht 
 - Data ophalen uit een api en die data in html tonen.
 - De website/code moet dynamisch zijn.
@@ -25,6 +44,21 @@ De structuur van mijn site ziet er als vorlgt uit (de structuur kan nog verander
 ![interactionDiagram](https://user-images.githubusercontent.com/45541885/74232393-f96c0e80-4cc8-11ea-8e2d-d38c66c2dcdf.jpg)
 
 ### Installatie
+Om Dit project zelf ook te kunnen gebruiken kan je mijn repository forken rechts boven. Daar kan je het ook eventueel downloaden. Verder heb je de api, darksky, nodig. Hieronder leg ik uit hoe je daar gebruik van kan maken. Zorg er wel voor dat je jouw eigen key gebruikt. 
+
+Verder maar ik ook gebruik van cors. Dit is een api die een omleiding maakt naar de api, darksky. Voor mij is dit nodig omdat ik anders een cors error krijg en ik de api niet kan gebruiken. Kijk ook of je dit nodig heb. Zo ja dan kan je gewoon deze link voor jouw api link plaatsen. 
+
+Cors link die ik heb gebruikt: https://cors-anywhere.herokuapp.com/
+
+Zo komt de api link er nu uit te zien: https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${key}/${lat},${long} 
+
+#### Routie 
+Voor de navigatie maak ik gebruik van Routie. Als je dat ook wilt gebruiken zet je de script boven aan in de body van je html 
+```html
+<script src="libary/routie.js"></script>
+```
+
+Op deze manier kan er nu getoggled worden tussen hoofd en detail pagina's. De javascript code hiervoor kan je vinden in de module onder route.
 
 ### De api en data
 De api die ik heb gebruikt is darksky: https://darksky.net/dev Deze api haald het weer op van een locatie naar keuze. In de api zit: 
@@ -43,7 +77,7 @@ De url die je moet gebruiken om de api aan de praat te krijgen ziet er zo uit:
 ```
 De key kan je opvragen op de hun site. Je kan het gratis gebruiken alleen er zit wel een limiet van 1000 calls per dag. Als je jouw key hebt gekregen zet je die in de key in de url. Vervolgens kan je zelf ook een lat en long opzoeken en deze in de url plaatsen. Standaard staat er een locatie uit Amerika. 
 
-#### Van Amikaanse waardes naar Europese waardes
+#### Van Amerikaanse waardes naar Europese waardes
 Standaard staan alle waardes in het Amerikaans. Om dit om te zetten naar meters en graden celsius moet je dit kleine stukje achter jouw api link plaatsen en nu komt dus de link er zo uit te zien: 
 ```
 ?units=si
@@ -127,24 +161,44 @@ function convertTimestamp(timeStamp){
 
 ### Features
 - [ ] Locatie ophalen van de gebruiker en op basis daarvan het weer tonen
-- [ ] Detailpagina tonen zonder overflow hidden
-- [ ] ... aanvullen ...
+- [x] Detailpagina tonen zonder overflow hidden
+- [ ] gebruik maken van een template om data te tonen op de site
+- [ ] Hele getallen tonen
+- [ ] URL api gebruiken om een nog nettere url te maken
 
-<!-- Add a link to your live demo in Github Pages 🌐-->
+### Bronnenlijst
+- Api: https://darksky.net/dev
+- Routie: https://github.com/cmda-minor-web/web-app-from-scratch-1920/tree/master/examples/routing-fetching-templating
+- CORS error oplossing: Maikel Sleebos deelde het in Slack, https://cors-anywhere.herokuapp.com/
+- Time converter: Ramon Meijers deelde het met mij in de les
+- Time converter met een mooie string: https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Global_Objects/Date
+- Time converter string zonder GMT: https://stackoverflow.com/questions/9323182/how-to-remove-the-last-word-in-the-string-using-javascript
+- Class toggle voor Routie: https://github.com/cmda-minor-web/web-app-from-scratch-1920/tree/master/examples/routing-fetching-templating
+- Data in de html krijgen: Ramon Meijers hielp mij hiermee in de les
 
-<!-- ☝️ replace this description with a description of your own work -->
+### Credits
+- Ramon Meijers, hij hielp me met data laden in html en heeft me geholpen met timestamps omzetten naar leesbare tijd. 
+- Maikel Sleebos, dankzij hem heb ik de cors error niet meer. 
+- Joost Faber, hij heeft mij geholpen met de promise die vervelend ging doen zodra ik alles in modules ging plaatsen. 
+- Robin Stut, hij heeft me geholpen met een filter functie waarbij ik de eerste 3 items uit de array terug krijg. 
 
-<!-- replace the code in the /docs folder with your own, so you can showcase your work with GitHub Pages 🌍 -->
+
+
+<!-- DONE! Add a link to your live demo in Github Pages 🌐-->
+
+<!-- DONE ☝️ replace this description with a description of your own work -->
+
+<!-- DONE replace the code in the /docs folder with your own, so you can showcase your work with GitHub Pages 🌍 -->
 
 <!-- Add a nice poster image here at the end of the week, showing off your shiny frontend 📸 -->
 
-<!-- Maybe a table of contents here? 📚 -->
+<!-- DONE Maybe a table of contents here? 📚 -->
 
-<!-- How about a section that describes how to install this project? 🤓 -->
+<!-- DONE How about a section that describes how to install this project? 🤓 -->
 
-<!-- ...but how does one use this project? What are its features 🤔 -->
+<!-- DONE ...but how does one use this project? What are its features 🤔 -->
 
-<!-- What external data source is featured in your project and what are its properties 🌠 -->
+<!-- DONE What external data source is featured in your project and what are its properties 🌠 -->
 
 <!-- Maybe a checklist of done stuff and stuff still on your wishlist? ✅ -->
 
