@@ -6,14 +6,15 @@
 export async function getData(){
     // cors error opgelost door dit ervoor te zetten https://cors-anywhere.herokuapp.com/
     //bron van Maikel Sleebos 
-    // const cors = 'https://cors-anywhere.herokuapp.com/';
+    const cors = 'https://cors-anywhere.herokuapp.com/';
     const api = 'https://api.darksky.net/forecast/';
     const key = '4607992d79c7de3829e5f5b67a062c8e';
     //lat, long staat op Amsterdam
     const lat = '52.379189';
     const long = '4.899431';
     const units = '?units=si';
-    const url = `${api}${key}/${lat},${long}${units}`; 
+    const url = `${cors}${api}${key}/${lat},${long}${units}`;
+    // const url = `${api}${key}/${lat},${long}${units}`; 
     
     //lat en long mee kunnen geven aan deze url. Misschien heeft google maps dat wel?
     //dat kan met dit ${name} tussen de `` Het is een soort template 
