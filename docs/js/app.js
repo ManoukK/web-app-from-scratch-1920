@@ -12,5 +12,24 @@ getData()
         setNode(results);
         setDetailNode(results);
         router();
+        calcWeather(results);
         console.log(results);
     });
+
+
+function calcWeather(results) {
+    console.log("hoi dit doet het", results)
+    
+    // const test = results.reduce((a, b) => (a + b))
+    const graden = results.temperature;
+    console.log(graden)
+    
+    const test = graden.reduce(function (accumulator, currentValue){
+        return accumulator + currentValue;
+    });
+
+    const gem = test / results.length;
+
+    console.log(gem)
+    // return gem;
+}
