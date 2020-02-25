@@ -74,3 +74,10 @@ article.active {
   display: initial;
   /* visibility: visible; */
 } 
+
+body > header > p {
+  background-color: var(--lightBlue);
+  color: var(--darkBlue);
+  text-align: center;
+}
+
