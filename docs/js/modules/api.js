@@ -1,55 +1,19 @@
 // //fake json dankzij Maikel Sleebos
-// import {data} from '/temp.js'
 
-// console.log(data);
-// getFakeData(data);
-
-// //json bestand?
-
-// export function getFakeData(data) {
-//     const promiseFakeData = new Promise(function(resolve, reject) {
-//         resolve(data);
-//       });
-
-//     //promise van Robin Stut en https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then
-//     //Alleen de array met de uren terug krijgen
-//     promiseFakeData.then(results => {
-//         console.log("uren", results.hourly);
-//         return results.hourly;
-//     })
-//     //Geeft de data van de uren terug (nu hoef je minder diep in de array te zitten)
-//     .then(results => { 
-//         return results.data;
-//     })
-//     //Data een beetje opschonen en alles wat ik niet vermeld word eruit gefilterd
-//     .then(results => {
-//         return dataCleaningNames(results)
-//     })
-//     .then(results => {
-//         return filterArray(results)
-//     })
-//     .then(results => {
-//         console.log(results)
-//         return results
-//     })
-
-//     console.log(promiseFakeData)
-//     return promiseFakeData
-// };
+import { dataCleaningNames } from '/dataClean.js';
+import { filterArray } from '/dataClean.js';
 
 export async function getData(){
     // cors error opgelost door dit ervoor te zetten https://cors-anywhere.herokuapp.com/
     //bron van Maikel Sleebos 
-    const cors = 'https://cors-anywhere.herokuapp.com/';
+    // const cors = 'https://cors-anywhere.herokuapp.com/';
     const api = 'https://api.darksky.net/forecast/';
     const key = '4607992d79c7de3829e5f5b67a062c8e';
     //lat, long staat op Amsterdam
     const lat = '52.379189';
     const long = '4.899431';
     const units = '?units=si';
-    // const url = `${cors}${api}${key}/${lat},${long}${units}`; 
     const url = `${api}${key}/${lat},${long}${units}`; 
-    // console.log(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${key}/${lat},${long}?units=si`)
     
     //lat en long mee kunnen geven aan deze url. Misschien heeft google maps dat wel?
     //dat kan met dit ${name} tussen de `` Het is een soort template 
@@ -85,56 +49,51 @@ export async function getData(){
             return filterArray(results);
         })
         .then(results => {
-            // test(results);
-            // setDetailNode(results);
-            // console.log(results);
             return results;
         });
         return data;
-        // console.log(data)
-        // return Promise.all([data])
 };
 
-function dataCleaningNames(results){
-    return results.map(results => {
-        return {
-            time: convertTimestamp(results.time),
-            summary: results.summary,
-            weatherType: results.precipType,
-            temperature: results.temperature,
-            temperatureFeeling: results.apparentTemperature,
-            wind: results.windSpeed,
-            windGust: results.windGust,
-            airpressure: results.pressure,
-            visibility: results.visibility, 
-            icon: results.icon,
-        };
-    });
-};
+// function dataCleaningNames(results){
+//     return results.map(results => {
+//         return {
+//             time: convertTimestamp(results.time),
+//             summary: results.summary,
+//             weatherType: results.precipType,
+//             temperature: results.temperature,
+//             temperatureFeeling: results.apparentTemperature,
+//             wind: results.windSpeed,
+//             windGust: results.windGust,
+//             airpressure: results.pressure,
+//             visibility: results.visibility, 
+//             icon: results.icon,
+//         };
+//     });
+// };
 
-//deze function heb ik dankzij Robin Stut
-function filterArray(results){
-    const newValue =  results.filter((results, index)  => {       
-        return index < 3;
-    });
-    // console.log(newValue);
-    return newValue;
-};
+// //deze function heb ik dankzij Robin Stut
+// function filterArray(results){
+//     const newValue =  results.filter((results, index)  => {       
+//         return index < 3;
+//     });
+//     // console.log(newValue);
+//     return newValue;
+// };
 
-function convertTimestamp(timeStamp){
-    //code regel van Ramon gekregen
-    const timeString = new Date(timeStamp * 1000);
-    //https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Global_Objects/Date
-    //verschillende type tijden
-    const readableTime = timeString.toGMTString();
-    //https://stackoverflow.com/questions/9323182/how-to-remove-the-last-word-in-the-string-using-javascript
-    //laatste woord verwijderen van de timestring
-    const splitReadableTime = readableTime.split(' ');
-    const lastWord = splitReadableTime.pop();
-    const cleanTimeSting = splitReadableTime.join(' ');
+// function convertTimestamp(timeStamp){
+//     //code regel van Ramon gekregen
+//     const timeString = new Date(timeStamp * 1000);
+//     //https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Global_Objects/Date
+//     //verschillende type tijden
+//     const readableTime = timeString.toGMTString();
+//     //https://stackoverflow.com/questions/9323182/how-to-remove-the-last-word-in-the-string-using-javascript
+//     //laatste woord verwijderen van de timestring
+//     const splitReadableTime = readableTime.split(' ');
+//     const lastWord = splitReadableTime.pop();
+//     const cleanTimeSting = splitReadableTime.join(' ');
 
-    return cleanTimeSting;
-};
+//     return cleanTimeSting;
+// };
 
 // export const fakeFetchData  = {
 //     0: {
@@ -178,8 +137,3 @@ function convertTimestamp(timeStamp){
 // console.log(fakeFetchData)
 
 // wat doe je met lastige klanten?
-
-// function test(results){
-//     console.log("wekrt dit?", results)
-//     return (results)
-// }
