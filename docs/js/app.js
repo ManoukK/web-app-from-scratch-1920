@@ -4,32 +4,43 @@ import { getData } from './modules/api.js';
 import { setNode } from './modules/render.js';
 import { setDetailNode } from './modules/render.js';
 import { router } from './modules/route.js';
-
+import { mapWeather } from './modules/AverageTemp.js';
+import { loading } from './modules/loadingState.js';
 // createNode();
+
+
+loading.Show("loading");
 
 getData()
     .then((results)=> {
+        loading.Hide("loading");
         setNode(results);
         setDetailNode(results);
         router();
-        calcWeather(results);
+        mapWeather(results);
         console.log(results);
     });
 
+// //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
+// function calcWeather(results) {
+//     const temperatureData = results.map(results => {
+//         const graden = results.temperature;
+//         console.log(graden);
 
-function calcWeather(results) {
-    console.log("hoi dit doet het", results)
-    
-    // const test = results.reduce((a, b) => (a + b))
-    const graden = results.temperature;
-    console.log(graden)
-    
-    const test = graden.reduce(function (accumulator, currentValue){
-        return accumulator + currentValue;
-    });
+//         return graden;
+//     });
 
-    const gem = test / results.length;
+//     console.log(temperatureData);
 
-    console.log(gem)
-    // return gem;
-}
+//     const totalTemperature = temperatureData.reduce(function (accumulator, currentValue){
+//         return accumulator + currentValue;
+//     });
+
+//     console.log(totalTemperature)
+
+//     const averageTemperature = totalTemperature / results.length;
+//     const averageTemperatureRoundedDown = Math.round(averageTemperature);
+
+//     console.log(averageTemperature);
+//     console.log(averageTemperatureRoundedDown);
+// };

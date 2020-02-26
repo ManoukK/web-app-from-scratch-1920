@@ -81,3 +81,15 @@ body > header > p {
   text-align: center;
 }
 
+#averageTemp {
+  background-color: brown;
+}
+
+#loading > p {
+  padding: 2em;
+  text-align: center;
+}
+
+#loading {
+  display: none;
+}
