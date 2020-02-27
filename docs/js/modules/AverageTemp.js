@@ -12,6 +12,8 @@ export function mapWeather(results) {
 
 function calcWeather(temperatureData){
     const totalTemperature = temperatureData.reduce(function (accumulator, currentValue){
+        console.log("accumulator", accumulator);
+        console.log("currentValue", currentValue)
         return accumulator + currentValue;
     });
 

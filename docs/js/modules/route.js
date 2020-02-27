@@ -13,10 +13,6 @@ export function router(){
             classToggle('route2');
             console.log('Je hebt op card 3 geklikt!');
         },
-        // 'home': function() {
-        //     classToggle('route2');
-        //     console.log('Je hebt op card 3 geklikt!');
-        // }
     });
 };
 

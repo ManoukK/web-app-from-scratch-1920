@@ -1,10 +1,4 @@
-import { getData } from './modules/api.js';
-
-getData()
-    .then((results)=> {
-        dataCleaningNames(results);
-        filterArray(results);
-    });
+// import { getData } from './modules/api.js';
 
 export function dataCleaningNames(results){
     return results.map(results => {

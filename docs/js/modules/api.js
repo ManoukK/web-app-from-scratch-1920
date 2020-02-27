@@ -13,8 +13,8 @@ export async function getData(){
     const lat = '52.379189';
     const long = '4.899431';
     const units = '?units=si';
-    // const url = `${cors}${api}${key}/${lat},${long}${units}`;
-    const url = `${api}${key}/${lat},${long}${units}`; 
+    const url = `${cors}${api}${key}/${lat},${long}${units}`;
+    // const url = `${api}${key}/${lat},${long}${units}`; 
     
     //lat en long mee kunnen geven aan deze url. Misschien heeft google maps dat wel?
     //dat kan met dit ${name} tussen de `` Het is een soort template 

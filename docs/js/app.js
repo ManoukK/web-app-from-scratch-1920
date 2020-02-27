@@ -6,6 +6,9 @@ import { setDetailNode } from './modules/render.js';
 import { router } from './modules/route.js';
 import { mapWeather } from './modules/AverageTemp.js';
 import { loading } from './modules/loadingState.js';
+
+// import { dataCleaningNames } from '/dataClean.js';
+// import { filterArray } from '/dataClean.js';
 // createNode();
 
 
@@ -13,6 +16,8 @@ loading.Show("loading");
 
 getData()
     .then((results)=> {
+        // dataCleaningNames(results);
+        // filterArray(results);
         loading.Hide("loading");
         setNode(results);
         setDetailNode(results);
