@@ -16,9 +16,6 @@ export async function getData(){
     const url = `${cors}${api}${key}/${lat},${long}${units}`;
     // const url = `${api}${key}/${lat},${long}${units}`; 
     
-    //lat en long mee kunnen geven aan deze url. Misschien heeft google maps dat wel?
-    //dat kan met dit ${name} tussen de `` Het is een soort template 
-    
     const data = await fetch(url)
         //data word json
         .then(response => {
@@ -32,21 +29,17 @@ export async function getData(){
         })
         //Alleen de array met de uren terug krijgen
         .then(results => {
-            // console.log("uren", results.hourly);
             return results.hourly;
         })
         //Geeft de data van de uren terug (nu hoef je minder diep in de array te zitten)
         .then(results => { 
-            // console.log(results)
             return results.data;
         })
         //Data een beetje opschonen en alles wat ik niet vermeld word eruit gefilterd
         .then(results => {
-            // console.log(results)
             return dataCleaningNames(results);
         })
         .then(results => {
-            // console.log(results)
             return filterArray(results);
         })
         .then(results => {
@@ -134,7 +127,3 @@ function convertTimestamp(timeStamp){
 //         icon: "rain",
 //     },
 // };
-
-// console.log(fakeFetchData)
-
-// wat doe je met lastige klanten?

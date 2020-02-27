@@ -22,7 +22,6 @@ export function filterArray(results){
     const newValue =  results.filter((results, index)  => {       
         return index < 3;
     });
-    // console.log(newValue);
     return newValue;
 };
 
