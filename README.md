@@ -38,10 +38,10 @@ Ik wil het in teletext stijl vormgeven want dat vind ik een hele leuke stijl.
 De structuur van mijn site ziet er als vorlgt uit (de structuur kan nog veranderen naarmate ik verder werk aan dit project)
 
 #### Actor diagram
-![actorDiagram](https://user-images.githubusercontent.com/45541885/74232384-f5d88780-4cc8-11ea-86b1-265d1f24af53.jpg)
+![newActorDiagram2](https://user-images.githubusercontent.com/45541885/75348378-fd8c5480-58a2-11ea-9105-bdc079053e21.jpg)
 
 #### Interaction diagram
-![interactionDiagram](https://user-images.githubusercontent.com/45541885/74232393-f96c0e80-4cc8-11ea-8e2d-d38c66c2dcdf.jpg)
+![newInteractionDiagram](https://user-images.githubusercontent.com/45541885/75348384-02510880-58a3-11ea-8469-985c5578a450.jpg)
 
 ### Installatie
 Om Dit project zelf ook te kunnen gebruiken kan je mijn repository forken rechts boven. Daar kan je het ook eventueel downloaden. Verder heb je de api, darksky, nodig. Hieronder leg ik uit hoe je daar gebruik van kan maken. Zorg er wel voor dat je jouw eigen key gebruikt. 
