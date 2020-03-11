@@ -14,6 +14,7 @@ export function setNode(results){
             );
         mainElement.append(sectionElement);
     });
+    // route fixen dynamisch
 };
 
 export function setDetailNode(results, index){
@@ -31,7 +32,7 @@ export function setDetailNode(results, index){
             createNode("p", "id", "windGust", result.windGust, "The gusts of wind outside are", "km/h"),
             createNode("p", "id", "visibility", result.visibility, "You can see", "km in the distance"),
             createNode("p", "id", "airpressure", result.airpressure, "The air pressure is", "hPa"),
-            createNode("a", "href", "#top", "back to top >"),
+            createNode("a", "href", "", "back to top >"),
             );
         mainElement.append(sectionElement);
     });

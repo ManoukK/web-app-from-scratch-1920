@@ -15,3 +15,4 @@ export const loading = {
     Show: show,
     Hide: hide
 }
+
