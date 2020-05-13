@@ -18,6 +18,7 @@
 * [Features](#Features)
 * [Bronnenlijst](#Bronnenlijst)
 * [Credits](#Credits)
+* [Aanvulling](#Aanvulling)
 
 ### De opdracht 
 - Data ophalen uit een api en die data in html tonen.
@@ -181,3 +182,47 @@ function convertTimestamp(timeStamp){
 - Maikel Sleebos, dankzij hem heb ik de cors error niet meer. 
 - Joost Faber, hij heeft mij geholpen met de promise die vervelend ging doen zodra ik alles in modules ging plaatsen. 
 - Robin Stut, hij heeft me geholpen met een filter functie waarbij ik de eerste 3 items uit de array terug krijg. 
+
+### Aanvulling
+In mijn code maakte ik eerst gebruik van routie met id’s die ik in de route elke keer los aansprak. Dat zag er zo uit: 
+
+```js
+export function router(){
+   routie ({
+       'route0': function() {
+           classToggle('route0');
+           console.log('Je hebt op card 1 geklikt!');
+       },
+       'route1': function() {
+           classToggle('route1');
+           console.log('Je hebt op card 2 geklikt!');
+       },
+       'route2': function() {
+           classToggle('route2');
+           console.log('Je hebt op card 3 geklikt!');
+       },
+   });
+};
+```
+
+Dit is eigenlijk helemaal geen handige manier, vooral als je meer id’s erbij krijgt. Elke id doet hier bij mij ook hetzelfde. Een class togglen. Met de nieuwe code lukt dit met veel minder regels.
+
+```js
+export function router(){
+   routie ({
+       ':id': function(id) {
+           classToggle(id);
+       }
+   });
+};
+```
+
+Nu word elke id aangesproken en daarin wordt de class getoggled zoals ik hierboven ook had geschreven alleen dan veel langer. De juiste id kan ik doorgeven aan de classToggle function en zo kan ik de juiste elementen verstoppen of laten zien. 
+
+De id’s in html zijn niet de id’s die je kent maar je geeft id’s voor routie met data-route. Dat zou er bij mij dan zo uit zien alleen omdat ik de sections aanmaak in javascript zie je dit niet zo in mijn html code staan.
+
+```html
+ <section data-route="route1">
+```
+
+route1 is dus een id die je kan gebruiken voor routie. 
