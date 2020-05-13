@@ -217,7 +217,7 @@ export function router(){
 };
 ```
 
-Nu word elke id aangesproken en daarin wordt de class getoggled zoals ik hierboven ook had geschreven alleen dan veel langer. De juiste id kan ik doorgeven aan de classToggle function en zo kan ik de juiste elementen verstoppen of laten zien. 
+Nu word elke id aangesproken en daarin wordt de class getoggled zoals ik hierboven ook had geschreven alleen dan veel langer. De juiste id kan ik doorgeven aan de classToggle function en zo kan ik de juiste elementen verstoppen of laten zien. Hierdoor word de code een stuk dynamischer. 
 
 De id’s in html zijn niet de id’s die je kent maar je geeft id’s voor routie met data-route. Dat zou er bij mij dan zo uit zien alleen omdat ik de sections aanmaak in javascript zie je dit niet zo in mijn html code staan.
 
@@ -225,3 +225,4 @@ De id’s in html zijn niet de id’s die je kent maar je geeft id’s voor rout
  <section data-route="route1">
 ```
 
+Een project waar ik routie nog meer voor heb gebruikt is project 1 van de OBA: https://github.com/ManoukK/project-1-1920 In de readme staat ook wat informatie over hoe ik dit heb aan gepakt en in dit project zorg ik ook voor dat de html elmeenten pas worden aangemaakt met javascript zodra er een routie word geactiveerd. Dit is iets netter dan hoe ik het met dit project heb opgelost. 
