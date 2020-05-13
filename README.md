@@ -225,4 +225,3 @@ De id’s in html zijn niet de id’s die je kent maar je geeft id’s voor rout
  <section data-route="route1">
 ```
 
-route1 is dus een id die je kan gebruiken voor routie. 
